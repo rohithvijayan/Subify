@@ -11740,12 +11740,13 @@ html {
   display: flex;
   flex-direction: column;
   justify-content: end;
-  padding: 12px;
+  padding: 10px;
   gap: 12px;
   border-radius: 8px;
   cursor: pointer;
   color: white;
   margin-left: 10vw;
+
 }
 
 .card-front::before {
@@ -11876,3 +11877,4 @@ html {
 .signup-link a {
   text-decoration: underline;
 }
+.logo-front{margin-top:- 10vw;}
