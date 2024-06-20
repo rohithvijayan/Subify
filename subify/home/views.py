@@ -45,11 +45,12 @@ def gen_sub(request,id):
         subtitle=srt.Subtitle(index=index,start=timedelta(seconds=start),end=timedelta(seconds=end),content=text)
         content_list.append(subtitle)
         
-    with open(subtitle_file_path,"w+") as srtfile:
+    with open(subtitle_file_path,"w") as srtfile:
         srtfile.write(srt.compose(subtitles=content_list))
+    
+    with open(subtitle_file_path,"rb") as srtfile:
         source_vid.subfile.save(name=f"{sub_name}.srt", content=File(srtfile))
+    source_vid.save()
     response=FileResponse(open(subtitle_file_path, "rb"),as_attachment=True)
     return response
-    
-    
         
