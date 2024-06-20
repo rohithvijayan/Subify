@@ -6,6 +6,8 @@ import srt
 from datetime import timedelta
 import os
 from openai.types.audio import transcription,translation,Transcription
+from django.core.files import File
+from django.http import FileResponse
 # Create your views here.
 def home(request):
     return render(request,"home/index.html")
@@ -24,7 +26,7 @@ def vidUpload(request):
 
 def gen_sub(request,id):
     source_vid=upload_video.objects.get(id=id)
-    sub_name=source_vid.title
+    sub_name=source_vid.title+str(source_vid.id)
     file_path=source_vid.video.path
     audioclip=AudioFileClip(file_path)
     audioclip.write_audiofile(f"media/converted_audio/{sub_name}.wav")
@@ -34,6 +36,7 @@ def gen_sub(request,id):
     print(sub)
     segments=sub.segments
     content_list=[]
+    subtitle_file_path = f"media/subtitles/{sub_name}.srt"
     for item in segments:
         index=item['id']
         start=item['start']
@@ -42,11 +45,11 @@ def gen_sub(request,id):
         subtitle=srt.Subtitle(index=index,start=timedelta(seconds=start),end=timedelta(seconds=end),content=text)
         content_list.append(subtitle)
         
-    with open(f"media/subtitles/{sub_name}.srt","w+") as srtfile:
+    with open(subtitle_file_path,"w+") as srtfile:
         srtfile.write(srt.compose(subtitles=content_list))
-        srtfile.close()
-    return HttpResponse(f"Subtitle generated successfully for {sub_name}.srt")
-
+        source_vid.subfile.save(name=f"{sub_name}.srt", content=File(srtfile))
+    response=FileResponse(open(subtitle_file_path, "rb"),as_attachment=True)
+    return response
     
     
         
