@@ -50,7 +50,7 @@ def gen_sub(request,id):
     
     with open(subtitle_file_path,"rb") as srtfile:
         source_vid.subfile.save(name=f"{sub_name}.srt", content=File(srtfile))
-    source_vid.save()
+
     response=FileResponse(open(subtitle_file_path, "rb"),as_attachment=True)
     return response
         
