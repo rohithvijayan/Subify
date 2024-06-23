@@ -149,6 +149,6 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 
 CSRF_TRUSTED_ORIGINS = [
-    "subify.onrender.com",
-    "subify.onrender.com/upload"
+    "https://subify.onrender.com",
+    "https://subify.onrender.com/upload"
 ]
