@@ -15,7 +15,7 @@ import os
 
 import dj_database_url
 
-ALLOWED_HOSTS = ['.vercel.app','now.sh','127.0.0.1','localhost']
+ALLOWED_HOSTS = ['.vercel.app','now.sh','127.0.0.1','https://subify-76dogh1uo-rohith-vijayans-projects.vercel.app/']
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 DATABASES = BASE_DIR = Path(__file__).resolve().parent.parent
 
