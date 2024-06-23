@@ -33,3 +33,4 @@ tqdm==4.66.4
 typing_extensions==4.12.2
 urllib3==2.2.2
 whitenoise==6.7.0
+gunicorn==19.7.1
