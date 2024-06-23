@@ -89,9 +89,8 @@ DATABASES = {
 }
 '''
 
-
 if not DEBUG:
-    DATABASES = {'default': dj_database_url.parse(os.environ.get('postgresql://subify:dySiWTu90GNRKgjzu785v8W5LMDHjJxb@dpg-cps4fst6l47c73dvo0tg-a/subifydb'))}
+    DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))}
 else:
     DATABASES = {
         'default': {
