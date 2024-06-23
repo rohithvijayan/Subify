@@ -15,7 +15,7 @@ import os
 
 import dj_database_url
 
-ALLOWED_HOSTS = ["subify.onrender.com"]
+ALLOWED_HOSTS = ["subify.onrender.com",'127.0.0.1']
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 DATABASES = BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -149,5 +149,6 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 
 CSRF_TRUSTED_ORIGINS = [
-    "https://subify.onrender.com"
+    "subify.onrender.com",
+    "subify.onrender.com/upload"
 ]
