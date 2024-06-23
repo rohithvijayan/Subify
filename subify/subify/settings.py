@@ -15,9 +15,10 @@ import os
 
 import dj_database_url
 
-ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app']
+ALLOWED_HOSTS = ['*']
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-DATABASES = {}
+DATABASES = BASE_DIR = Path(__file__).resolve().parent.parent
+
 
 
 # Quick-start development settings - unsuitable for production
@@ -71,7 +72,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'subify.wsgi.app'
+WSGI_APPLICATION = 'subify.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
