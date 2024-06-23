@@ -15,7 +15,7 @@ import os
 
 import dj_database_url
 
-ALLOWED_HOSTS = ["subify.vercel.app"]
+ALLOWED_HOSTS = ["subify.onrender.com"]
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 DATABASES = BASE_DIR = Path(__file__).resolve().parent.parent
 
