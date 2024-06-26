@@ -28,7 +28,7 @@
                         <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
                             <li class="nav-item"><a class="nav-link" href=" {% url 'home' %} ">Home</a></li>
                             <li class="nav-item"><a class="nav-link" href=" {% url 'features' %} ">Features</a></li>
-                            <li class="nav-item"><a class="nav-link" href=" {% url 'home' %} ">About</a></li>
+                            <li class="nav-item"><a class="nav-link" href=" {% url 'about' %} ">About</a></li>
                         </ul>
                     </div>
                 </div>
@@ -155,9 +155,8 @@
                                 <p class="lead fw-light mb-4"> Is more than just an AI-powered subtitle generator; it's your gateway to a global audience.
                                     We're passionate about empowering creators to share their stories without language barriers.</p>
                                 <div class="d-flex justify-content-center fs-2 gap-4">
-                                    <a class="text-gradient" href=" {% static '#!' %} "><i class="bi bi-twitter"></i></a>
-                                    <a class="text-gradient" href=" {% static '#!' %} "><i class="bi bi-linkedin"></i></a>
-                                    <a class="text-gradient" href=" {% static '#!' %} "><i class="bi bi-github"></i></a>
+                                    <a class="text-gradient" href=" {% url 'linkedin' %} "><i class="bi bi-linkedin"></i></a>
+                                    <a class="text-gradient" href=" {% url 'github' %} "><i class="bi bi-github"></i></a>
                                 </div>
                             </div>
                         </div>
