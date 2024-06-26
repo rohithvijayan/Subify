@@ -10,6 +10,13 @@
  * Copyright 2011-2022 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+ html,body {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
+}
 :root {
   --bs-blue: #1e30f3;
   --bs-indigo: #6610f2;
@@ -11732,6 +11739,7 @@ html {
     left: -2vw;
   }
 }
+ 
 .card-front {
   position: relative;
   width: 350px;
@@ -11774,12 +11782,6 @@ html {
   filter: blur(20px);
 }
 
-.heading {
-  font-size: 20px;
-  text-transform: capitalize;
-  font-weight: 700;
-}
-
 .card-front p:not(.heading) {
   font-size: 14px;
 }
@@ -11796,6 +11798,13 @@ html {
 .card-front:hover::before {
   transform: rotate(-90deg) scaleX(1.34) scaleY(0.77);
 }
+
+.heading {
+  font-size: 20px;
+  text-transform: capitalize;
+  font-weight: 700;
+}
+
 .form {
   background-color: #fff;
   display: block;
