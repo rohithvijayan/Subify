@@ -24,6 +24,9 @@ def vidUpload(request):
        
     return render(request,"home/upload.html")
 
+def features(request):
+    return render(request,"home/features.html")
+
 def gen_sub(request,id):
     source_vid=upload_video.objects.get(id=id)
     sub_name=source_vid.title+str(source_vid.id)
