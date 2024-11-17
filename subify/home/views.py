@@ -38,7 +38,7 @@ def gen_sub(request, id):
     audioclip = AudioFileClip(file_path)
     audioclip.write_audiofile(f"media/converted_audio/{sub_name}.wav")
     
-    openai.api_key = "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"
+    openai. api_key=os.environ.get("OPENAI_API_KEY")
     audio = open(f"media/converted_audio/{sub_name}.wav", mode='rb')
 
     try:
