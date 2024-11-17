@@ -1,1 +1,6 @@
 /home/rohith/Desktop/Subify/subify/media
+# Ignore the virtual environment
+venv/
+
+# Ignore output files
+output.srt
