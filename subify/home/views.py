@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect, HttpResponse
+import openai.error
 from .models import upload_video
 import openai
 from moviepy.editor import AudioFileClip
