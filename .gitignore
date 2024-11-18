@@ -3,4 +3,6 @@
 venv/
 
 # Ignore output files
+media
 output.srt
+
